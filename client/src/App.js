@@ -5,13 +5,13 @@ import Nav from './components/Nav';
 // import Keyword from './components/KeywordSearch';
 // import Color from './components/ColorSearch';
 // import PhotoCard from './components/PhotoCard';
-import Landing from './pages/Landing'
+import PhotoPage from './pages/Photographer'
 
 function App() {
   return (
     <div className="App">
       <Nav/>
-      <Landing/>
+      <PhotoPage/>
       {/* <Keyword/>
       <Color/>
       <PhotoCard/> */}
