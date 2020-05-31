@@ -9,7 +9,7 @@ function keywordSearch() {
                     <div className="row">
                         <div className="input-field col s12">
                             <textarea id="textarea1" className="materialize-textarea"></textarea>
-                            <label for="textarea1">Search by Keyword</label>
+                            <label for="textarea1">Search Photos by Keyword</label>
                         </div>
                     </div>
                 </form>

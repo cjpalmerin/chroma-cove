@@ -5,7 +5,7 @@ const path = require('path')
 const mongoose = require("mongoose");
 // const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 // app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(process.env.MONGODB_URI);
 // router.use(function(req, res) {
 //     res.sendFile(path.join(__dirname, "./client/build/index.html"))
 // });

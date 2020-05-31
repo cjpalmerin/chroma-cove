@@ -2,22 +2,30 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import Nav from './components/Nav';
-// import Keyword from './components/KeywordSearch';
-// import Color from './components/ColorSearch';
-// import PhotoCard from './components/PhotoCard';
-import PhotoPage from './pages/Photographer'
+import Wrapper from "./components/Wrapper";
+import Landing from './pages/Landing';
+import Favorite from './pages/Favorite';
+import Photographer from './pages/Photographer';
+import LogIn from './pages/Login';
+import SignUp from './pages/Signup';
+
+import API from './utils/API'
 
 function App() {
+  API.getUnsplashPhotos().then((data) => {
+    console.log(data);
+  })
   return (
     <Router>
     <div className="App">
     <Nav/>
-    <Route exact path="/" component={Home}/> 
-    {/* search page */}
+    <Wrapper>
+    <Route exact path="/" component={Landing}/> 
     <Route exact path="/signup" component={SignUp}/>
     <Route exact path="/login" component={LogIn}/>
     <Route path="/photographer" component={Photographer}/>
     <Route path="/favorite" component={Favorite}/>
+    </Wrapper>
     </div>
     </Router>
   );

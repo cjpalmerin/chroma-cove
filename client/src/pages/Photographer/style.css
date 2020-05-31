@@ -11,5 +11,13 @@
 }
 
 .photographer-name, .photographer-link, .photographer-bio {
-    text-align: left;
+    text-align: left !important;
+}
+
+img {
+    padding-top: 0.5rem;
+}
+
+.container {
+    margin-top: 2rem;
 }

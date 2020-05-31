@@ -1,0 +1,25 @@
+.photographer-title {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.photographer-info {
+    padding-top: 1rem;
+}
+
+.uk-card {
+    border-radius: 8px;
+}
+
+.btn-floating {
+    float: right;
+}
+
+i {
+    font-style: normal;
+}
+
+.name {
+    text-align: left;
+}
+
