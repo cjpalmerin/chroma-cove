@@ -3,7 +3,7 @@ import "./style.css";
 
 function Signup() {
     return (
-        <div className="login">
+        <div className="signup">
             <h3>Sign Up</h3>
             <p>Sign up for ChromaCove so you can keep track of all your new favorite photographers!</p>
             <form>
@@ -16,4 +16,6 @@ function Signup() {
     )
 }
 
-export default Login;
+export default Signup;
+
+

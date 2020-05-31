@@ -1,11 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import Nav from './components/Nav';
-import Wrapper from "./components/Wrapper"
-import Keyword from './components/KeywordSearch';
-import PhotoCard from './components/PhotoCard';
-import Login from './pages/Login'
+import Wrapper from "./components/Wrapper";
+import Landing from './pages/Landing';
+import Favorite from './pages/Favorite';
+import Photographer from './pages/Photographer';
+import LogIn from './pages/Login';
+import SignUp from './pages/Signup';
 
 import API from './utils/API'
 
@@ -14,19 +16,18 @@ function App() {
     console.log(data);
   })
   return (
+    <Router>
     <div className="App">
-      <Nav />
-      <Wrapper>
-{/* UNCOMMENT THESE FOR THE KEYWORD SEARCH */}
-        {/* <Keyword />
-        <PhotoCard />
-        <PhotoCard />
-        <PhotoCard /> */}
-
-{/* UNCOMMENT THESE FOR THE LOGIN DIV */}
-        <Login />
-      </Wrapper>
+    <Nav/>
+    <Wrapper>
+    <Route exact path="/" component={Landing}/> 
+    <Route exact path="/signup" component={SignUp}/>
+    <Route exact path="/login" component={LogIn}/>
+    <Route path="/photographer" component={Photographer}/>
+    <Route path="/favorite" component={Favorite}/>
+    </Wrapper>
     </div>
+    </Router>
   );
 }
 

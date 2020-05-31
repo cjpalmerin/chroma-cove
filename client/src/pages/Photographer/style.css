@@ -1,0 +1,23 @@
+.photographer-name {
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+.photographer-link {
+    margin: 0;
+}
+
+.photographer-bio {
+    margin-top: 1rem;
+}
+
+.photographer-name, .photographer-link, .photographer-bio {
+    text-align: left !important;
+}
+
+img {
+    padding-top: 0.5rem;
+}
+
+.container {
+    margin-top: 2rem;
+}

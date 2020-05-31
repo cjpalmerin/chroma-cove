@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link, useLocation } from "react-router-dom";
 import "./style.css";
 
 function Nav() {
+    const location = useLocation();
     return (
         <div className="navbar">
             {/* <nav className="headerStyle">
@@ -14,9 +16,13 @@ function Nav() {
                 </div>
             </nav> */}
             <h1>ChromaCove</h1>
-            <a href="#">Search</a>
+            <Link to="/" className={location.pathname === "/" ? "nav-link:active" : "nav-link"}>
+                Search
+            </Link>
             <span> | </span>
-            <a href="#">Favorites</a>
+            <Link to="/favorite" className={location.pathname === "/favorite" ? "nav-link:active" : "nav-link"}>
+                Favorite
+            </Link>
         </div>
 
     );
