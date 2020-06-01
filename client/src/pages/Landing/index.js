@@ -25,12 +25,12 @@ class Landing extends React.Component {
                     <div className="col s6 m4">
                         <div className="card">
                             <div className="card-image">
-                                <img src="https://picsum.photos/200" alt="image-preview"/>
+                                <img src="https://picsum.photos/200" alt="preview"/>
                             </div>
                                 <div className="card-content">
                                     <p className="card-maintxt">Photographer Name</p>
                                     <p className="card-maintxt">@username</p>
-                                    <p className="card-link">from <a>Unsplash</a></p>
+                                    {/* <p className="card-link">from <a>Unsplash</a></p> */}
                                 </div>
                             </div>
                         </div>
@@ -38,12 +38,12 @@ class Landing extends React.Component {
                         <div className="col s6 m4">
                         <div className="card">
                             <div className="card-image">
-                                <img src="https://picsum.photos/200" alt="image-preview"/>
+                                <img src="https://picsum.photos/200" alt="preview"/>
                             </div>
                                 <div className="card-content">
                                     <p className="card-maintxt">Photographer Name</p>
                                     <p className="card-maintxt">@username</p>
-                                    <p className="card-link">from <a>Unsplash</a></p>
+                                    {/* <p className="card-link">from <a>Unsplash</a></p> */}
                                 </div>
                             </div>
                         </div>
@@ -51,12 +51,12 @@ class Landing extends React.Component {
                         <div className="col s6 m4">
                         <div className="card">
                             <div className="card-image">
-                                <img src="https://picsum.photos/200" alt="image-preview"/>
+                                <img src="https://picsum.photos/200" alt="preview"/>
                             </div>
                                 <div className="card-content">
                                     <p className="card-maintxt">Photographer Name</p>
                                     <p className="card-maintxt">@username</p>
-                                    <p className="card-link">from <a>Unsplash</a></p>
+                                    {/* <p className="card-link">from <a>Unsplash</a></p> */}
                                 </div>
                             </div>
                         </div>
