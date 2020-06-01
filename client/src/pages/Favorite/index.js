@@ -1,21 +1,23 @@
 import React from 'react';
-// import axios from "axios";
-// import { Link, useLocation } from "react-router-dom";
 import "./style.css";
+import API from '../../utils/API';
 
 
 
 class Favorite extends React.Component {
 
+    state = {
+        photos: []
+    }
+
     render() {
-        // const location = useLocation();
 
         return (
             <div className="container">
                 <div className="uk-card uk-card-default uk-width-1-1@m">
                     <div className="uk-card-header">
-                        {/* <a className="btn-floating btn-small waves-effect waves-light"><i className="material-icons" width="40" height="40">✕</i></a> */}
-                        <div className="uk-grid-large uk-flex-middle" uk-grid>
+                        <a className="btn-floating btn-small waves-effect waves-light"><i className="material-icons" width="40" height="40">✕</i></a>
+                        <div className="uk-grid-large uk-flex-middle" uk-grid="true">
                             <div className="row photographer-info">
                                 <div className="col s2">
                                     <div className="uk-width-auto">
@@ -33,7 +35,7 @@ class Favorite extends React.Component {
 
                             {/* IMAGES PREVIEW */}
                             <div className="row">
-                                <div className="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: slide">
+                                <div className="uk-child-width-1-3@m" uk-grid="true" uk-lightbox="animation: slide">
                                     <div className="col s6 m4">
                                         {/* <a className="uk-inline" href="https://picsum.photos/200" data-caption="Caption 1"> */}
                                             <img src="https://picsum.photos/700/500" alt="preview" />
