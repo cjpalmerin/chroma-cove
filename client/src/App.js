@@ -13,7 +13,7 @@ import API from './utils/API'
 
 function App() {
   API.getUnsplashPhotos().then((data) => {
-    console.log(data);
+    console.log(data.data);
   })
   return (
     <Router>
