@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const router = require('express').Router()
 const path = require('path')
@@ -10,6 +11,7 @@ const MongoStore = require('connect-mongo')(session);
 const passport = require('./passport');
 
 const user = require("./routes/user");
+const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT;
 
@@ -39,6 +41,8 @@ app.use('/user', user)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+// Add routes, both API and view
+app.use(routes);
 
 mongoose.connect(process.env.MONGODB_URI);
 app.listen(PORT, function() {
