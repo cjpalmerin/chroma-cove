@@ -1,11 +1,21 @@
 import React from 'react';
-import axios from "axios";
 import "./style.css";
 import Search from '../../components/KeywordSearch';
-
-
+import API from '../../utils/API'
 
 class Landing extends React.Component {
+
+    state = {
+        photos: [],
+    }
+
+    componentDidMount() {
+        console.log("component mounted")
+        API.getUnsplashPhotos().then(data => {
+            console.log(data)
+            this.setState({ photos: data})
+        })
+    }
 
     render() {
         return (
