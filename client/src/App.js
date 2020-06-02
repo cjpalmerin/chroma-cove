@@ -22,10 +22,10 @@ function App() {
     <Nav/>
     <Wrapper>
     <Route exact path="/" component={Landing}/> 
-    <Route exact path="/search" component={Search}/> 
+    {/* <Route exact path="/search" component={Search}/>  */}
     <Route exact path="/signup" component={SignUp}/>
     <Route exact path="/login" component={LogIn}/>
-    <Route path="/photographer" component={Photographer}/>
+    <Route exact path="/photographer/:username" component={Photographer}/>
     <Route path="/favorite" component={Favorite}/>
     </Wrapper>
     </div>

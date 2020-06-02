@@ -16,7 +16,7 @@ function Nav() {
                 </div>
             </nav> */}
             <h1>ChromaCove</h1>
-            <Link to="/search" className={location.pathname === "/search" ? "nav-link:active" : "nav-link"}>
+            <Link to="/" className={location.pathname === "/" ? "nav-link:active" : "nav-link"}>
                 Search
             </Link>
             <span> | </span>
