@@ -51,7 +51,7 @@ class App extends Component {
               updateUser={this.updateUser}
             />}
         />
-      <Route path="/photographer" component={Photographer}/>
+      <Route path="/photographer/:username" component={Photographer}/>
       <Route path="/favorite" component={Favorite}/>
       </Wrapper>
       </div>
