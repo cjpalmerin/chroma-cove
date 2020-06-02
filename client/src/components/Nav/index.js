@@ -1,31 +1,68 @@
-import React from 'react';
-import { Link, useLocation } from "react-router-dom";
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./style.css";
+import axios from 'axios'
 
-function Nav() {
-    const location = useLocation();
-    return (
-        <div className="navbar">
-            {/* <nav className="headerStyle">
-                <a href="#" className="brand-logo left navStyle">ChromaCove</a>
-                <div className="nav-wrapper">
-                    <ul id="nav-mobile" className="left hide-on-med-and-down">
-                        <li> <a href="badges.html">search by color</a></li>
-                        <li> <a href="collapsible.html">favorites</a></li>
-                    </ul>
-                </div>
-            </nav> */}
-            <h1>ChromaCove</h1>
-            <Link to="/" className={location.pathname === "/" ? "nav-link:active" : "nav-link"}>
-                Search
-            </Link>
-            <span> | </span>
-            <Link to="/favorite" className={location.pathname === "/favorite" ? "nav-link:active" : "nav-link"}>
-                Favorite
-            </Link>
-        </div>
+class Nav extends Component {
+    constructor() {
+        super()
+        this.logout = this.logout.bind(this)
+        this.state = {
+            redirectTo: null
+        }
+    }
 
-    );
+    logout(event) {
+        event.preventDefault()
+        console.log('logging out')
+        axios.post('/user/logout').then(response => {
+            console.log(response.data)
+            if (response.status === 200) {
+                this.props.updateUser({
+                    loggedIn: false,
+                    username: null
+                })
+                this.setState({
+                    redirectTo: '/'
+                })
+            }
+        }).catch(error => {
+            console.log('Logout error')
+        })
+    }
+
+    render() {
+        const loggedIn = this.props.loggedIn;
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
+        return (
+            <div className="navbar">
+                <h1>ChromaCove</h1>
+                {loggedIn ? (
+                                <>
+                                <Link to="/" className="nav-link" onClick={this.logout}>
+                                    Logout</Link>
+    
+                                </>
+                            ) :(
+                                <>
+                                <Link to="/" className={window.location.pathname === "/" ? "nav-link:active" : "nav-link"}>
+                                    Search
+                                </Link>
+                                <span> | </span> 
+                                <Link to="/favorite" className={window.location.pathname === "/favorite" ? "nav-link:active" : "nav-link"}>
+                                    Favorite
+                                </Link> 
+                                </>
+                            )}
+                
+            </div>
+    
+        );
+                            }
+    }
 }
 
 
