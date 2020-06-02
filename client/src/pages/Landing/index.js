@@ -10,11 +10,11 @@ class Landing extends React.Component {
     }
 
     componentDidMount() {
-        console.log("component mounted")
+        // console.log("component mounted")
         API.getUnsplashPhotos().then(data => {
-            console.log(data)
+            // console.log(data)
             this.setState({ photos: data.data })
-            console.log(this.state.photos[0].urls.regular)
+            // console.log(this.state.photos[0].urls.regular)
         })
     }
 
