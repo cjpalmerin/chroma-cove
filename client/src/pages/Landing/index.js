@@ -53,7 +53,7 @@ class Landing extends React.Component {
                                             <img src={photo.urls.regular} alt="preview" />
                                         </div>
                                         <div className="card-content">
-                                            {/* <a href= "/photographer/{photo.user.username}" className="card-maintxt">{photo.user.name}</a> */}
+                                            <a href={`/photographer/${photo.user.username}`} className="card-maintxt">{photo.user.name}</a>
                                             <p className="card-maintxt">@{photo.user.instagram_username}</p>
                                             <p className="card-link">from <a href={photo.links.html} target="_blank">Unsplash</a></p>
                                         </div>

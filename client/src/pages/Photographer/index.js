@@ -26,7 +26,7 @@ export default function Photographer() {
         <div className="container">
             <div className="uk-card uk-card-default uk-width-1-1@m">
                 <div className="uk-card-header">
-                    {/* <a className="btn-floating btn-small waves-effect waves-light"><i className="material-icons" width="40" height="40">♡</i></a> */}
+                    <a className="btn-floating btn-medium waves-effect waves-light"><i className="material-icons" width="60" height="60">♡</i></a>
                     <div className="uk-grid-large uk-flex-middle" uk-grid>
                         <div className="row photographer-info">
                             <div className="col s2">
