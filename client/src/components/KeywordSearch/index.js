@@ -7,7 +7,7 @@ function Search(props){
             <div className="row">
                 <form className="col s12">
                     <div className="row">
-                        <div className="input-field col s12">
+                        <div className="input-field col s10">
                             <input
                                 value={props.keyword}
                                 onChange={props.handleInputChange}
@@ -16,8 +16,10 @@ function Search(props){
                                 className="form-control"
                                 placeholder="Search Photos by Keyword..."
                             />
-                            <button type="submit" onClick={props.handleSubmit}>Submit</button>
-                        </div>
+                            </div>
+                            <div className="col s2">
+                            <button type="submit" onClick={props.handleSubmit} className="search-image">Submit</button>
+                            </div>
                     </div>
                 </form>
             </div>
