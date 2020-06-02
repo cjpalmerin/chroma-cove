@@ -8,6 +8,7 @@ import Favorite from './pages/Favorite';
 import Photographer from './pages/Photographer';
 import LogIn from './pages/Login';
 import SignUp from './pages/Signup';
+import Search from './components/KeywordSearch';
 
 import API from './utils/API'
 
@@ -21,9 +22,10 @@ function App() {
     <Nav/>
     <Wrapper>
     <Route exact path="/" component={Landing}/> 
+    {/* <Route exact path="/search" component={Search}/>  */}
     <Route exact path="/signup" component={SignUp}/>
     <Route exact path="/login" component={LogIn}/>
-    <Route path="/photographer" component={Photographer}/>
+    <Route exact path="/photographer/:username" component={Photographer}/>
     <Route path="/favorite" component={Favorite}/>
     </Wrapper>
     </div>

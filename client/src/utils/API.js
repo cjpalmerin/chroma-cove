@@ -5,9 +5,9 @@ export default {
     getUnsplashPhotos: function () {
         return axios.get("/unsplash/photos");
     },
-    //SEARCH FOR PHOTOS WITH A KEYWORD ======UNSPLASH======
-    keywordSearch: function () {
-        return axios.get("/search/photos");
+
+    keywordSearch: function(query) {
+        return axios.post("/search/photos/", {query});
     },
     //GETS ALL PHOTOS FROM A SPECIFIC PHOTOGRPAHER ======UNSPLASH======
     getPortfolio: function (username) {
