@@ -31,11 +31,17 @@ class Login extends Component {
             if (response.status === 200) {
                 console.log(response)
                 console.log("Logged in successfully");
-                // this.props.updateUser({
-                //     loggedIn: true,
-                //     username: response.data.username
-                // })
-                this.props.history.push('/favorite');
+                alert("Logged in successfully");
+                this.props.updateUser({
+                    loggedIn: true,
+                    username: response.data.username
+                })
+                console.log(this.props.updateUser);
+                // this.props.history.push('/favorite');
+                this.setState({
+                    redirectTo: '/favorite'
+                })
+
             }
         }).catch(error => {
         console.log('login error: ')
@@ -45,6 +51,9 @@ class Login extends Component {
     }
 
     render() {
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
         return (
             <div className="login">
                 <h3>Login to ChromaCove</h3>
@@ -56,6 +65,7 @@ class Login extends Component {
             </div>
     
         )
+        }
     }
     
 }

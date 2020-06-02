@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import Nav from './components/Nav';
@@ -12,24 +12,54 @@ import Search from './components/KeywordSearch';
 
 import API from './utils/API'
 
-function App() {
-  API.getUnsplashPhotos().then((data) => {
-    console.log(data.data);
-  })
-  return (
-    <Router>
-    <div className="App">
-    <Nav/>
-    <Wrapper>
-    <Route exact path="/" component={Landing}/> 
-    <Route exact path="/signup" component={SignUp}/>
-    <Route exact path="/login" component={LogIn}/>
-    <Route exact path="/photographer/:username" component={Photographer}/>
-    <Route path="/favorite" component={Favorite}/>
-    </Wrapper>
-    </div>
-    </Router>
-  );
+class App extends Component {
+  // API.getUnsplashPhotos().then((data) => {
+  //   console.log(data.data);
+  // })
+  constructor() {
+    super()
+    this.state = {
+      loggedIn: false,
+      username: null,
+      user: null
+    }
+
+    // this.getUser = this.getUser.bind(this)
+    // this.componentDidMount = this.componentDidMount.bind(this)
+    this.updateUser = this.updateUser.bind(this)
+  }
+
+  updateUser(userObject) {
+    this.setState(userObject)
+  }
+
+
+
+  render() {
+    return (
+      <Router>
+      <div className="App">
+      <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+      <Wrapper>
+      <Route exact path="/" component={Landing}/> 
+      <Route exact path="/signup" component={SignUp}/>
+      {/* <Route exact path="/login" updateUser={this.updateUser} component={LogIn}/> */}
+      <Route
+          path="/login"
+          render={() =>
+            <LogIn
+              updateUser={this.updateUser}
+            />}
+        />
+      <Route path="/photographer" component={Photographer}/>
+      <Route path="/favorite" component={Favorite}/>
+      </Wrapper>
+      </div>
+      </Router>
+    );
+  }
+  
 }
 
 export default App;
+
