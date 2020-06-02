@@ -16,7 +16,7 @@ class Favorite extends React.Component {
             <div className="container">
                 <div className="uk-card uk-card-default uk-width-1-1@m">
                     <div className="uk-card-header">
-                        <a className="btn-floating btn-small waves-effect waves-light"><i className="material-icons" width="40" height="40">✕</i></a>
+                        <button><i className="material-icons" width="40" height="40">✕</i></button>
                         <div className="uk-grid-large uk-flex-middle" uk-grid="true">
                             <div className="row photographer-info">
                                 <div className="col s2">

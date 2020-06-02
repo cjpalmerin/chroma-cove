@@ -12,6 +12,7 @@ export default function Photographer() {
     const [photos, setPhotos] = useState([]);
     const [avatar, setAvatar] = useState("");
     //const {username} = useParams();
+
     useEffect(() => {
         API.getPortfolio(username).then(response => {
             console.log(response);
@@ -22,11 +23,21 @@ export default function Photographer() {
             setPhotos(response.data)
         })
     }, "")
+
+    handleSave = () => {
+        API.addFavePhotog({username}).then(res => 
+            console.log(res)
+        )
+        .catch(err =>
+            console.log(err)
+        ) 
+    }
+
     return (
         <div className="container">
             <div className="uk-card uk-card-default uk-width-1-1@m">
                 <div className="uk-card-header">
-                    <a className="btn-floating btn-medium waves-effect waves-light"><i className="material-icons" width="60" height="60">♡</i></a>
+                    <button onClick={this.handleSave}><i className="material-icons" width="60" height="60">♡</i></button>
                     <div className="uk-grid-large uk-flex-middle" uk-grid>
                         <div className="row photographer-info">
                             <div className="col s2">

@@ -6,7 +6,7 @@ router.route('/')
     .get(favoritesController.getFavePhotogs)
 
 //'/api/favorites/:id'
-router.route("/:id")
+router.route("/:username")
     .get(favoritesController.addFavePhotog)
 
 module.exports = router;
