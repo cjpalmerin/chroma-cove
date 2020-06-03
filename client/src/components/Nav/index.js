@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import "./style.css";
 import axios from 'axios'
+import logo from "../../images/logo192.png"
+
 
 class Nav extends Component {
     constructor() {
@@ -39,6 +41,7 @@ class Nav extends Component {
         } else {
         return (
             <div className="navbar">
+                <img className="nav-logo" src={logo}></img>
                 <h1>ChromaCove</h1>
                 {loggedIn ? (
                                 <>
