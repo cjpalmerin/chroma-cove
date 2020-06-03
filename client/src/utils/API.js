@@ -22,8 +22,8 @@ export default {
         return axios.get("api/favorites")
     },
     //GET USER'S FAVORITE PHOTOGRAPHERS ======CHROMACOVE======
-    addFavePhotog: function (photo) {
-        return axios.post("api/favorites", photo)
+    addFavePhotog: function (username) {
+        return axios.post("/api/favorites/", username)
     }
 
 }

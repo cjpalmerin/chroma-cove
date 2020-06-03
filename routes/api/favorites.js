@@ -9,4 +9,7 @@ router.route('/')
 router.route("/:username")
     .get(favoritesController.addFavePhotog)
 
+router.route("/:username")
+    .post(favoritesController.addFavePhotog)
+
 module.exports = router;

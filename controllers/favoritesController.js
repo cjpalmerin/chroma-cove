@@ -10,6 +10,7 @@ module.exports = {
         .catch(err => res.status(422).json(err))
     },
     addFavePhotog: function(req, res) {
+        console.log(req)
         db.Favorites
         .create(req.body)
         .then(dbModel => res.json(dbModel))

@@ -24,8 +24,10 @@ export default function Photographer() {
         })
     }, "")
 
-    handleSave = () => {
-        API.addFavePhotog({username}).then(res => 
+    const handleSave = (event) => {
+        event.preventDefault()
+        console.log(username)
+        API.addFavePhotog(username).then(res => 
             console.log(res)
         )
         .catch(err =>
@@ -37,7 +39,7 @@ export default function Photographer() {
         <div className="container">
             <div className="uk-card uk-card-default uk-width-1-1@m">
                 <div className="uk-card-header">
-                    <button onClick={this.handleSave}><i className="material-icons" width="60" height="60">♡</i></button>
+                    <button onClick={handleSave}><i className="material-icons" width="60" height="60">♡</i></button>
                     <div className="uk-grid-large uk-flex-middle" uk-grid>
                         <div className="row photographer-info">
                             <div className="col s2">
