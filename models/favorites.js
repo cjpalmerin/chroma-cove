@@ -3,7 +3,6 @@ const Schema = mongoose.Schema
 
 
 const favoritesSchema = new Schema({
-    id: { type: String, required: true },
     username: { type: String, required: true },
 
 })

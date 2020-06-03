@@ -4,7 +4,10 @@ const bcrypt = require('bcryptjs');
 mongoose.promise = Promise
 
 const userSchema = new Schema({
-
+    favorites: [{
+        type: Schema.Types.ObjectId,
+        ref: "Favorites"
+    }],
     username: { type: String, unique: true, required: true },
     password: { type: String, unique: false, required: true },
 })
