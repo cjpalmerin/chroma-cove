@@ -32,7 +32,7 @@ class Signup extends Component {
 		})
 			.then(response => {
 				console.log(response)
-				if (!response.data.errmsg) {
+				if (!response.data.errors && !response.data.error) {
 					console.log('successful signup')
 					this.props.history.push('/login');
 				} else {
