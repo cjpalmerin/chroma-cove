@@ -45,9 +45,13 @@ class Nav extends Component {
                 <h1>ChromaCove</h1>
                 {loggedIn ? (
                                 <>
+                                 {/* <Link to="/" className={window.location.pathname === "/" ? "nav-link:active" : "nav-link"}>
+                                    Search
+                                </Link>
+                                <span> | </span>  */}
+
                                 <Link to="/" className="nav-link" onClick={this.logout}>
                                     Logout</Link>
-    
                                 </>
                             ) :(
                                 <>
