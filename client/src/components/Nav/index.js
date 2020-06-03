@@ -39,36 +39,39 @@ class Nav extends Component {
         if (this.state.redirectTo) {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
-        return (
-            <div className="navbar">
-                <img className="nav-logo" src={logo}></img>
-                <h1>ChromaCove</h1>
-                {loggedIn ? (
-                                <>
-                                 {/* <Link to="/" className={window.location.pathname === "/" ? "nav-link:active" : "nav-link"}>
-                                    Search
+            return (
+                <div className="navbar">
+                    <img className="nav-logo" src={logo}></img>
+                    <h1>ChromaCove</h1>
+                    {loggedIn ? (
+                        <>
+                            <Link to="/" className={window.location.pathname === "/" ? "nav-link:active" : "nav-link"}>
+                                Search
                                 </Link>
-                                <span> | </span>  */}
-
-                                <Link to="/" className="nav-link" onClick={this.logout}>
-                                    Logout</Link>
-                                </>
-                            ) :(
-                                <>
+                            <span> | </span>
+                            <Link to="/favorite" className={window.location.pathname === "/favorite" ? "nav-link:active" : "nav-link"}>
+                                Favorite
+                                </Link>
+                            <span> | </span>
+                            <Link to="/" className="nav-link" onClick={this.logout}>
+                                Logout</Link>
+                        </>
+                    ) : (
+                            <>
                                 <Link to="/" className={window.location.pathname === "/" ? "nav-link:active" : "nav-link"}>
                                     Search
                                 </Link>
-                                <span> | </span> 
+                                <span> | </span>
                                 <Link to="/favorite" className={window.location.pathname === "/favorite" ? "nav-link:active" : "nav-link"}>
                                     Favorite
-                                </Link> 
-                                </>
-                            )}
-                
-            </div>
-    
-        );
-                            }
+                                </Link>
+                            </>
+                        )}
+
+                </div>
+
+            );
+        }
     }
 }
 

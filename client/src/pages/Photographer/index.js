@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import "./style.css";
 import API from '../../utils/API';
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, Redirect } from "react-router-dom"
 
-export default function Photographer() {
+export default function Photographer(props) {
     const [name, setName] = useState("");
     const { username } = useParams();
     console.log(username);
@@ -35,6 +35,12 @@ export default function Photographer() {
         ) 
     }
 
+    const loggedIn = props.loggedIn;
+    console.log(props)
+    // if(!loggedIn){
+    //     return <Redirect to='/login' />
+    // }
+    // else{
     return (
         <div className="container">
             <div className="uk-card uk-card-default uk-width-1-1@m">
@@ -107,9 +113,9 @@ export default function Photographer() {
             </div>
         </div>
     )
+                        }
 
-
-};
+// };
 // class PhotographerPage extends React.Component {
 //     state = {
 //         user: {
