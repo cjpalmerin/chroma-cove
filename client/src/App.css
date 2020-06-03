@@ -2,6 +2,12 @@ html {
   background: rgb(247, 247, 247);
 }
 
+.nav-logo {
+  height: 55px;
+  padding-bottom: 18px;
+  margin-right: 8px;
+}
+
 a, span {
   text-decoration: none;
   margin-right: 20px;
