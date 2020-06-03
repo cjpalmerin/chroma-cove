@@ -52,7 +52,9 @@ class App extends Component {
             />}
         />
       <Route path="/photographer/:username" component={Photographer}/>
-      <Route path="/favorite" component={Favorite}/>
+      <Route path="/favorite" render={() =>
+        < Favorite updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+      } />
       </Wrapper>
       </div>
       </Router>
