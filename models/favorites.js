@@ -4,6 +4,9 @@ const Schema = mongoose.Schema
 
 const favoritesSchema = new Schema({
     username: { type: String, required: true },
+    bio:{ type: String, required: true },
+    profile_image: { type: String, required: true },
+    photos: {type: Array, required: true}
 
 })
 
