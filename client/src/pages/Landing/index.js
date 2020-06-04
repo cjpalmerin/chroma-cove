@@ -2,6 +2,7 @@ import React from 'react';
 import "./style.css";
 import Search from '../../components/KeywordSearch';
 import API from '../../utils/API';
+import {  Link } from "react-router-dom"
 
 class Landing extends React.Component {
 
@@ -53,7 +54,7 @@ class Landing extends React.Component {
                                             <img src={photo.urls.regular} alt="preview" />
                                         </div>
                                         <div className="card-content">
-                                            <a href={`/photographer/${photo.user.username}`} className="card-maintxt">{photo.user.name}</a>
+                                            <Link to={`/photographer/${photo.user.username}`} className="card-maintxt">{photo.user.name}</Link>
                                             <p className="card-maintxt">@{photo.user.instagram_username}</p>
                                             <p className="card-link">from <a href={photo.links.html} target="_blank">Unsplash</a></p>
                                         </div>

@@ -30,6 +30,7 @@ class App extends Component {
   }
 
   updateUser(userObject) {
+    console.log(userObject);
     this.setState(userObject)
   }
 
@@ -51,7 +52,9 @@ class App extends Component {
               updateUser={this.updateUser}
             />}
         />
-      <Route path="/photographer/:username" component={Photographer}/>
+      <Route path="/photographer/:username" render={() =>
+        < Photographer updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+      } />
       <Route path="/favorite" render={() =>
         < Favorite updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
       } />

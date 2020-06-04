@@ -7,12 +7,12 @@ import { Redirect } from 'react-router-dom';
 
 class Favorite extends React.Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         // this.logout = this.logout.bind(this)
         this.state = {
             redirectTo: null,
-            photos: []
+            photographers: []
         }
 
     }
@@ -20,6 +20,15 @@ class Favorite extends React.Component {
     // state = {
     //     photos: []
     // }
+
+    componentDidMount() {
+        // console.log("component mounted")
+        API.getFavePhotogs().then(data => {
+            console.log(data)
+            this.setState({ photographers: data.data })
+            // console.log(this.state.photos[0].urls.regular)
+        })
+    }
 
     
     render() {
