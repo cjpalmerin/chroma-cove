@@ -2,13 +2,21 @@ const db = require("../models");
 
 module.exports = {
     //GET ALL FAVORITE PHOTOGRAPHERS
+    // getFavePhotogs: function(req, res) {
+    //     db.User
+    //     .findById(req.params.id)
+    //     .sort({ date: -1 })
+    //     .then(dbModel => res.json(dbModel))
+    //     .catch(err => res.status(422).json(err))
+    // },
     getFavePhotogs: function(req, res) {
-        db.Favorites
-        .find(req.query)
+        db.User
+        .find(req.params.username)
         .sort({ date: -1 })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err))
     },
+
     addFavePhotog: function(req, res) {
         if (req.user) {
             console.log(req.user.username)  //find their id in the req.user object

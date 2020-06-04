@@ -18,8 +18,9 @@ export default {
         return axios.get("/users/" + username)
     },
     //GET USER'S FAVORITE PHOTOGRAPHERS ======CHROMACOVE======
-    getFavePhotogs: function () {
-        return axios.get("api/favorites")
+    getFavePhotogs: function (username) {
+        console.log(username);
+        return axios.get("api/favorites/populate/" + username)
     },
     //GET USER'S FAVORITE PHOTOGRAPHERS ======CHROMACOVE======
     addFavePhotog: function (username) {
