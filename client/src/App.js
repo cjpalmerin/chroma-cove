@@ -56,7 +56,7 @@ class App extends Component {
         < Photographer updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
       } />
       <Route path="/favorite" render={() =>
-        < Favorite updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        < Favorite updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username} />
       } />
       </Wrapper>
       </div>

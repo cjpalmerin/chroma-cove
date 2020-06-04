@@ -15,10 +15,12 @@ class Favorite extends React.Component {
     //     photos: []
     // }
     componentDidMount() {
+
         // console.log(this.props.username)
         // console.log("component mounted")
         API.getFavePhotogs(this.props.username).then(data => {
             console.log(data.data)
+          
             this.setState({ photographers: data.data })
             // console.log(this.state.photos[0].urls.regular)
         })
