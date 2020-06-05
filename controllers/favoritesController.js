@@ -34,7 +34,7 @@ module.exports = {
     },
 
     deletePhotog:function (req, res) {
-        db.Favorites
+        db.User
         .findById({username: req.params.username})
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))
