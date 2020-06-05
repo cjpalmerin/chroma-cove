@@ -9,28 +9,28 @@ class Favorite extends React.Component {
             redirectTo: null,
             photographers: []
         }
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
 
     componentDidMount() {
         API.getFavePhotogs(this.props.username).then(data => {
-
-          
-            this.setState({ photographers: data.data })
-            // console.log(this.state.photos[0].urls.regular)
-        })
-    }
-
-    handleDelete() {
-        API.deletePhotog(this.props.username).then(data => {
-            console.log(data.data)
-            this.setState({photographers: data.data})
-        })
-    }
-
             console.log(data.data[0].favorites)
             this.setState({ photographers: data.data[0].favorites})
         })
+    }
+
+    handleDelete(id) {
+        console.log(id);
+        let phots = this.state.photographers;
+        for (let i = 0; i < phots.length; i++) {
+            console.log(phots[i])
+            // if(phots[i]._id)
+        }
+        API.deletePhotog(id).then(data => {
+            this.setState({photographers: data.data})
+        })
+        
     }
 
     render() {
@@ -46,7 +46,7 @@ class Favorite extends React.Component {
                             {this.state.photographers.map(photographer => (
                                 <div className="uk-card uk-card-default uk-width-1-1@m">
                                     <div className="uk-card-header">
-                                        <button onClick={this.handleDelete}><i className="material-icons" width="40" height="40">✕</i></button>
+                                        <button onClick={()=>this.handleDelete(photographer._id)} id={photographer._id}><i className="material-icons" width="40" height="40">✕</i></button>
                                         <div className="uk-grid-large uk-flex-middle" uk-grid="true">
                                             <div className="row photographer-info">
                                                 <div className="col s2">
