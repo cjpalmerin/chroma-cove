@@ -27,7 +27,9 @@ export default {
         return axios.post("/api/favorites/", userData)
     },
     deletePhotog: function(id) {
-        return axios.delete("/api/users" + id)
+        console.log(id);
+        
+        return axios.delete("/api/favorites/" + id)
     }
 
 }

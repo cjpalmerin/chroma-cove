@@ -1,4 +1,5 @@
 const db = require("../models");
+const mongoose = require("mongoose");
 
 module.exports = {
     //GET ALL FAVORITE PHOTOGRAPHERS
@@ -34,10 +35,15 @@ module.exports = {
     },
 
     deletePhotog:function (req, res) {
-        db.User.favorites
-        .findById({id: req.params.id})
-        .then(dbModel => dbModel.remove())
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err))
+        console.log(req.params.username);
+        
+        // db.User.favorites = db.User.favorites.filter(photo => photo.id === id)
+        db.User.findOneAndUpdate({username: req.user.username}, {$pull : {favorites: req.params.username}}, {new: true})
+        .then(success => {
+
+            res.json(true)
+            console.log("hello");
+        } 
+        )
     }
 }
