@@ -21,3 +21,46 @@ img {
 .container {
     margin-top: 2rem;
 }
+
+.favorite-button {
+    display: inline;
+    float: right;
+    background-color: #f48fb1;
+    margin-right: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bio {
+    font-size: 14px;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  li {
+    height: 40vh;
+    flex-grow: 1;
+  }
+  
+ .photo-preview {
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+    padding: 10px;
+    margin: 0px;
+  }
+
+  .login-link {
+      margin: 0px;
+      color: #f48fb1;
+      font-weight: 600;
+  }
+
+  .login-text {
+      font-size: 12.5px;
+      float: right;
+  }
