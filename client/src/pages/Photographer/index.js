@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./style.css";
 import API from '../../utils/API';
-import { Link, useParams, Redirect } from "react-router-dom"
+import { Link, useParams, Redirect } from "react-router-dom";
 
 export default function Photographer(props) {
     const [name, setName] = useState("");
@@ -125,19 +125,13 @@ export default function Photographer(props) {
                         <div className="row">
                             <div className="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: slide">
                                 <div className="col s6 m4">
-                                    {/* <a className="uk-inline" href="https://picsum.photos/200" data-caption="Caption 1"> */}
                                     <img src="https://picsum.photos/700/500" alt="preview" />
-                                    {/* </a> */}
                                 </div>
                                 <div className="col s6 m4">
-                                    {/* <a className="uk-inline" href="https://picsum.photos/200" data-caption="Caption 1"> */}
                                     <img src="https://picsum.photos/700/500" alt="preview" />
-                                    {/* </a> */}
                                 </div>
                                 <div className="col s6 m4">
-                                    {/* <a className="uk-inline" href="https://picsum.photos/200" data-caption="Caption 1"> */}
                                     <img src="https://picsum.photos/700/500" alt="preview" />
-                                    {/* </a> */}
                                 </div>
                             </div>
                         </div>
