@@ -31,9 +31,10 @@ class Favorite extends React.Component {
             // this.setState({photographers: data.data})
             console.log(data)
             // window.location.reload;
-        }).then(
-            window.location.reload()
-        )
+        })
+        // .then(
+        //     window.location.reload()
+        // )
         
     }
 
