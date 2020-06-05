@@ -5,4 +5,6 @@ const favoritesRoutes = require("./favorites");
 router.use("/favorites", favoritesRoutes);
 
 
+router.delete("/users/:id",favoritesController.deletePhotog)
+
 module.exports = router;

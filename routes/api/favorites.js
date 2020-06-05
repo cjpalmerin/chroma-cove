@@ -31,4 +31,7 @@ router.get("/populate/:username", (req, res) => {
     }
 });
 
+router.route("/:id")
+    .delete(favoritesController.deletePhotog);
+
 module.exports = router;
