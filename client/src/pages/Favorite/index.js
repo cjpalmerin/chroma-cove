@@ -5,15 +5,29 @@ import { Redirect, Link } from 'react-router-dom';
 class Favorite extends React.Component {
     constructor(props) {
         super(props)
-        // this.logout = this.logout.bind(this)
         this.state = {
             redirectTo: null,
             photographers: []
         }
     }
 
+
     componentDidMount() {
         API.getFavePhotogs(this.props.username).then(data => {
+
+          
+            this.setState({ photographers: data.data })
+            // console.log(this.state.photos[0].urls.regular)
+        })
+    }
+
+    handleDelete() {
+        API.deletePhotog(this.props.username).then(data => {
+            console.log(data.data)
+            this.setState({photographers: data.data})
+        })
+    }
+
             console.log(data.data[0].favorites)
             this.setState({ photographers: data.data[0].favorites})
         })
@@ -32,7 +46,7 @@ class Favorite extends React.Component {
                             {this.state.photographers.map(photographer => (
                                 <div className="uk-card uk-card-default uk-width-1-1@m">
                                     <div className="uk-card-header">
-                                        <button><i className="material-icons" width="40" height="40">✕</i></button>
+                                        <button onClick={this.handleDelete}><i className="material-icons" width="40" height="40">✕</i></button>
                                         <div className="uk-grid-large uk-flex-middle" uk-grid="true">
                                             <div className="row photographer-info">
                                                 <div className="col s2">

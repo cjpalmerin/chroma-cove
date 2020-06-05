@@ -2,13 +2,6 @@ const db = require("../models");
 
 module.exports = {
     //GET ALL FAVORITE PHOTOGRAPHERS
-    // getFavePhotogs: function(req, res) {
-    //     db.User
-    //     .findById(req.params.id)
-    //     .sort({ date: -1 })
-    //     .then(dbModel => res.json(dbModel))
-    //     .catch(err => res.status(422).json(err))
-    // },
     getFavePhotogs: function(req, res) {
         db.User
         .find(req.params.username)
@@ -37,14 +30,14 @@ module.exports = {
             //they are not logged in send em elsewhwere
             res.json({error: true,
                 message: "User not logged in"})
-            
-
         }
-            // console.log(req.user)
-        
-        //db.Favorites
-        //.create(req.body)
-        //.then(dbModel => res.json(dbModel))
-        //.catch(err => res.status(422).json(err))
+    },
+
+    deletePhotog:function (req, res) {
+        db.Favorites
+        .findById({username: req.params.username})
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err))
     }
 }

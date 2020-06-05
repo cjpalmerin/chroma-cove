@@ -10,6 +10,7 @@ router.route('/')
 // '/api/favorites/:id'
 router.route("/:username")
     .get(favoritesController.addFavePhotog)
+    .delete(favoritesController.deletePhotog)
 
 
 router.get("/populate/:username", (req, res) => {
