@@ -25,6 +25,9 @@ export default {
     //POST USER'S FAVORITE PHOTOGRAPHER ======CHROMACOVE======
     addFavePhotog: function (userData) {
         return axios.post("/api/favorites/", userData)
+    },
+    deletePhotog: function(username) {
+        return axios.delete("/users/" + username)
     }
 
 }
