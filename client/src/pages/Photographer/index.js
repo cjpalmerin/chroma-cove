@@ -79,7 +79,14 @@ export default function Photographer(props) {
         <div className="container">
             <div className="uk-card uk-card-default uk-width-1-1@m">
                 <div className="uk-card-header">
-                    <button onClick={handleSave}><i className="material-icons" width="60" height="60">♡</i></button>
+                {loggedIn ? (
+                        <button onClick={handleSave}><i className="material-icons" width="60" height="60">♡</i></button>
+                    ) : (
+                        <p>
+                        <Link to="/login">
+                        Login 
+                    </Link>here to add favorite</p>
+                    ) }
                     <div className="uk-grid-large uk-flex-middle" uk-grid>
                         <div className="row photographer-info">
                             <div className="col s2">

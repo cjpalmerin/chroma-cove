@@ -22,13 +22,15 @@ class Favorite extends React.Component {
 
     handleDelete(id) {
         console.log(id);
-        let phots = this.state.photographers;
-        for (let i = 0; i < phots.length; i++) {
-            console.log(phots[i])
+        // let phots = this.state.photographers;
+        // for (let i = 0; i < phots.length; i++) {
+        //     console.log(phots[i])
             // if(phots[i]._id)
-        }
+        // }
         API.deletePhotog(id).then(data => {
-            this.setState({photographers: data.data})
+            // this.setState({photographers: data.data})
+            console.log(data)
+            // window.location.reload;
         })
         
     }

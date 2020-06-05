@@ -26,8 +26,8 @@ export default {
     addFavePhotog: function (userData) {
         return axios.post("/api/favorites/", userData)
     },
-    deletePhotog: function(username) {
-        return axios.delete("/users/" + username)
+    deletePhotog: function(id) {
+        return axios.delete("/api/users" + id)
     }
 
 }
