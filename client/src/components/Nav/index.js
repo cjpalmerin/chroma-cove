@@ -25,9 +25,10 @@ class Nav extends Component {
                     loggedIn: false,
                     username: null
                 })
-                this.setState({
-                    redirectTo: '/'
-                })
+                return <Redirect to="/" />
+                // this.setState({
+                //     redirectTo: '/logout'
+                // })
             }
         }).catch(error => {
             console.log('Logout error')
