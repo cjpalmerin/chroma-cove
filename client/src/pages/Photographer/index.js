@@ -42,8 +42,8 @@ export default function Photographer(props) {
                 return API.addFavePhotog(photographerObject)
             }).then(res => {
                 console.log(res)
-                $("#favorite-message").text("Added to favorites");
-                $("#favorite-message").css("color", "green");
+                $("#favorite-message").text("Added to favorites!");
+                // $("#favorite-message").css("color", "green");
                 $("#favorite-message").fadeIn().delay(4000).fadeOut();
 
             }).catch(err => {
@@ -73,7 +73,7 @@ export default function Photographer(props) {
                         <>
                         <button onClick={handleSave} className="favorite-button"><i className="material-icons" width="60" height="60">♡</i></button>
                         <div>
-                        <p id="favorite-message"></p>
+                        <span><p id="favorite-message"></p></span>
                         </div>
                         </>
                     ) : (
