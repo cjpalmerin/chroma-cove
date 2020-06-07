@@ -36,5 +36,11 @@ a {
 }
 
 .no-account {
-    margin-top: 3rem;
+    margin-top: 2rem;
+}
+
+#signin-message {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: red;
 }

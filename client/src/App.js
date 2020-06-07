@@ -44,7 +44,7 @@ class App extends Component {
       <Wrapper>
       <Route exact path="/" component={Landing}/> 
       {/* <Route exact path="/signup" component={SignUp}/> */}
-      <Route path="/signup" render ={() => <SignUp />} />
+      <Route path="/signup" component={SignUp}/>
       {/* <Route exact path="/login" updateUser={this.updateUser} component={LogIn}/> */}
       <Route
           path="/login"

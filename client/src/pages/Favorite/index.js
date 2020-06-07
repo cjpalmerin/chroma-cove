@@ -76,6 +76,9 @@ class Favorite extends React.Component {
                                                                 <li>
                                                                     <img src={photographer.photos[2].urls.regular} alt="preview" className="photo-preview" />
                                                                 </li>
+                                                                <li>
+                                                                    <img src={photographer.photos[3].urls.regular} alt="preview" className="photo-preview" />
+                                                                </li>
                                                             </ul>
                                                             {/* <div className="col s6 m6">
                                                                     <img src={photographer.photos[0].urls.small} alt="preview" />
@@ -84,8 +87,12 @@ class Favorite extends React.Component {
                                                                     <img src={photographer.photos[1].urls.small} alt="preview" />
                                                                 </div>
                                                                 <div className="col s6 m6">
-                                                                    <img src={photographer.photos[2].urls.small} alt="preview" />
+                                                                    <img src={photographer.photos[2].urls.full} alt="preview" />
+                                                                </div>
+                                                                <div className="col s6 m6">
+                                                                    <img src={photographer.photos[3].urls.full} alt="preview" />
                                                                 </div> */}
+
                                                         </div>
                                                     </div>
                                                 </div>

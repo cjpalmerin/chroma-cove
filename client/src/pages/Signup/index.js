@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 import axios from 'axios'
 import "./style.css";
+import $ from "jquery";
 
 class SignUp extends Component {
     constructor() {
@@ -23,8 +25,8 @@ class SignUp extends Component {
     handleSubmit(event) {
 		console.log('sign-up handleSubmit, username: ')
 		console.log(this.state.username)
-		event.preventDefault()
-
+        event.preventDefault()
+        $("#signin-message").hide()
 		//request to server to add a new username/password
 		axios.post('/user/', {
 			username: this.state.username,
@@ -36,9 +38,15 @@ class SignUp extends Component {
 					console.log('successful signup')
 					this.props.history.push('/login');
 				} else {
-					console.log('username already taken')
+                    $("#signin-message").text("Username already taken!");
+                    $("#signin-message").css("color", "red");
+                    $("#signin-message").fadeIn().delay(4000).fadeOut();
+					console.log('Username already taken')
 				}
 			}).catch(error => {
+                $("#signin-message").text("Enter required credentials");
+                $("#signin-message").css("color", "red");
+                $("#signin-message").fadeIn().delay(4000).fadeOut();
 				console.log('signup error: ')
 				console.log(error)
 
@@ -55,6 +63,7 @@ class SignUp extends Component {
                     <input type="text" id="username" name="username" placeholder="Username" value={this.state.username} onChange={this.handleChange}></input>
                     <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}></input>
                     <button type="submit" onClick={this.handleSubmit}>Submit</button>
+                    <p id="signin-message"></p>
                     <p className="yes-account">Already have an account? <a href="/login" className="sign-up">Log In </a>to view your favorites!</p>
                 </form>
             </div>

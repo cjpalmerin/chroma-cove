@@ -22,7 +22,13 @@ input {
 }
 
 .yes-account {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     text-align: center;
     font-size: 12px;
+}
+
+#signin-message {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: red;
 }

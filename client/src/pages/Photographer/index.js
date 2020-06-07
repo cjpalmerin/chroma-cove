@@ -29,25 +29,11 @@ export default function Photographer(props) {
         API.getPortfolio(username)
             .then(response => {
                 console.log(response);
-                // setUsername(username);
-                // setName(response.data[0].user.name);
-                // setBio(response.data[0].user.bio)
-                // setAvatar(response.data[0].user.profile_image.large)
-                // setPhotos(response.data)
-                // console.log(response.data[0].user.profile_image.large)
-
-                // const photographerObj = {
-                //     name: response.data[0].user.name,
-                //     bio: response.data[0].user.bio,
-                //     profile_image: response.data[0].user.profile_image.large,
-                //     photos: response.data
-                // }
-                // console.log(photographerObj)
 
                 //data conversion promise step
                 return {
                     username: response.data[0].user.name,
-                    bio: response.data[0].user.bio,
+                    // bio: response.data[0].user.bio,
                     profile_image: response.data[0].user.profile_image.large,
                     photos: response.data
                 }
