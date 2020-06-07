@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
 import "./style.css";
+import $ from "jquery";
 
 class Login extends Component {
     constructor() {
@@ -23,6 +24,7 @@ class Login extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
+        $("#signin-message").hide()
         axios.post('/user/login', {
             username: this.state.username,
             password: this.state.password
@@ -31,7 +33,7 @@ class Login extends Component {
             if (response.status === 200) {
                 console.log(response)
                 console.log("Logged in successfully");
-                alert("Logged in successfully");
+                // alert("Logged in successfully");
                 this.props.updateUser({
                     loggedIn: true,
                     username: response.data.username
@@ -43,7 +45,15 @@ class Login extends Component {
                 })
 
             }
+            else{
+                $("#signin-message").text("Enter valid login details");
+                $("#signin-message").css("color", "red");
+                $("#signin-message").fadeIn().delay(4000).fadeOut();
+            }
         }).catch(error => {
+            $("#signin-message").text("Enter valid login details");
+            $("#signin-message").css("color", "red");
+            $("#signin-message").fadeIn().delay(4000).fadeOut();
         console.log('login error: ')
         console.log(error);
 
@@ -61,6 +71,7 @@ class Login extends Component {
                     <input type="text" id="username" name="username" placeholder="Username" value={this.state.username} onChange={this.handleChange}></input>
                     <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}></input>
                     <button type="submit" onClick={this.handleSubmit}>Submit</button>
+                    <p id="signin-message"></p>
                     <p>Don't have an account? Sign up today to get access to your Favorites!</p>
                     <button><Link to="/signup">Sign Up</Link></button>
                 </form>
