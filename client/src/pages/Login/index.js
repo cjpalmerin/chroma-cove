@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
 import "./style.css";
 
@@ -62,7 +62,7 @@ class Login extends Component {
                     <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}></input>
                     <button type="submit" onClick={this.handleSubmit}>Submit</button>
                     <p>Don't have an account? Sign up today to get access to your Favorites!</p>
-                    <button><a href="/signup">Sign Up</a></button>
+                    <button><Link to="/signup">Sign Up</Link></button>
                 </form>
             </div>
     
