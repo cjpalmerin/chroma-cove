@@ -80,12 +80,11 @@ export default function Photographer(props) {
             <div className="uk-card uk-card-default uk-width-1-1@m">
                 <div className="uk-card-header">
                 {loggedIn ? (
-                        <button onClick={handleSave}><i className="material-icons" width="60" height="60">♡</i></button>
+                        <button onClick={handleSave} className="favorite-button"><i className="material-icons" width="60" height="60">♡</i></button>
                     ) : (
-                        <p>
-                        <Link to="/login">
-                        Login 
-                    </Link>here to add favorite</p>
+                        <p className="login-text">
+                        <Link to="/login" className="login-link">Login </Link>to favorite
+                        </p>
                     ) }
                     <div className="uk-grid-large uk-flex-middle" uk-grid>
                         <div className="row photographer-info">
@@ -98,7 +97,7 @@ export default function Photographer(props) {
                                 <div className="uk-width-expand photographer-title">
                                     <h3 className="uk-card-title uk-margin-remove-bottom name">{name}</h3>
                                     <p className="uk-text-meta uk-margin-remove-top">@{username}</p>
-                                    <p>{bio}</p>
+                                    <p className="bio">{bio}</p>
                                 </div>
                             </div>
                         </div>
@@ -107,10 +106,15 @@ export default function Photographer(props) {
                             {photos.length ? (
                                 <div>
                                     {photos.map(photo => (
-                                        <div className="col s6 m4">
+                                        <div className="col s12 m4">
                                             <div className="card">
                                                 <div className="card-image">
-                                                    <img src={photo.urls.regular} alt="preview" />
+                                                    {/* <img src={photo.urls.regular} alt="preview" /> */}
+                                                    <ul>
+                                                        <li>
+                                                            <img src={photo.urls.regular} alt="preview" className="photo-preview" />
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                                 <div className="card-content">
                                                     <p className="card-link">from <a href={photo.links.html} target="_blank">Unsplash</a></p>
@@ -126,23 +130,6 @@ export default function Photographer(props) {
                             }
 
                         </div>
-
-
-
-                        <div className="row">
-                            <div className="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: slide">
-                                <div className="col s6 m4">
-                                    <img src="https://picsum.photos/700/500" alt="preview" />
-                                </div>
-                                <div className="col s6 m4">
-                                    <img src="https://picsum.photos/700/500" alt="preview" />
-                                </div>
-                                <div className="col s6 m4">
-                                    <img src="https://picsum.photos/700/500" alt="preview" />
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>

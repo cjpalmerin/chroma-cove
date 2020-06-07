@@ -2,7 +2,7 @@ import React from 'react';
 import "./style.css";
 import Search from '../../components/KeywordSearch';
 import API from '../../utils/API';
-import {  Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 class Landing extends React.Component {
 
@@ -24,7 +24,7 @@ class Landing extends React.Component {
         this.setState({
             keyword: event.target.value
         })
-        
+
     }
 
     handleSubmit = (event) => {
@@ -39,19 +39,24 @@ class Landing extends React.Component {
     render() {
         return (
             <div className="container">
-                <Search 
+                <Search
                     keyword={this.state.keyword}
                     handleInputChange={this.handleInputChange}
                     handleSubmit={this.handleSubmit}
                 />
                 <div className="row">
-                        {this.state.photos.length ? (
-                            <div>
-                                {this.state.photos.map(photo => (
-                                    <div className="col s6 m6">
+                    {this.state.photos.length ? (
+                        <div>
+                            {this.state.photos.map(photo => (
+                                <div className="col s6 m6">
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src={photo.urls.regular} alt="preview" />
+                                            {/* <img src={photo.urls.regular} alt="preview" /> */}
+                                            <ul>
+                                                <li>
+                                                    <img src={photo.urls.regular} alt="preview" className="photo-preview" />
+                                                </li>
+                                            </ul>
                                         </div>
                                         <div className="card-content">
                                             <Link to={`/photographer/${photo.user.username}`} className="card-maintxt">{photo.user.name}</Link>
@@ -59,15 +64,15 @@ class Landing extends React.Component {
                                             <p className="card-link">from <a href={photo.links.html} target="_blank">Unsplash</a></p>
                                         </div>
                                     </div>
-                                    </div>
-                                ))}
-                            </div>
-                        ) : (
-                        <div className="col s12">
-                        <h2 className="no-photos">Sorry, there are no photos to display</h2>
-                        </div>)
-                        }
-                    
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                            <div className="col s12">
+                                <h2 className="no-photos">Sorry, there are no photos to display</h2>
+                            </div>)
+                    }
+
                 </div>
             </div>
         );
