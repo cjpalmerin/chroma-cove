@@ -36,18 +36,15 @@ class Favorite extends React.Component {
 
     }
 
-    
-
-    render() {
+    render(){
         const loggedIn = this.props.loggedIn;
-        // if user is not logged in redirect the page to login page
-        if (!loggedIn) {
+        if(!loggedIn) {
             return <Redirect to='/login' />
         }
-        // if user is logged in then show the favorite photographers details
-        else {
-            return (
+        else{
+            return(
                 <div className="container">
+                    <div className="container">
                     {this.state.photographers.length ? (
                         <div>
                             {this.state.photographers.map(photographer => (
@@ -96,7 +93,8 @@ class Favorite extends React.Component {
                                 <h2 className="no-photos">Sorry, there are no photos to display</h2>
                             </div>)}
                 </div>
-            );
+                </div>
+            )
         }
     }
 }
