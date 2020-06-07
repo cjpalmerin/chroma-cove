@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import axios from 'axios'
 import "./style.css";
 
-class Signup extends Component {
+class SignUp extends Component {
     constructor() {
         super()
         this.state = {
@@ -64,6 +64,6 @@ class Signup extends Component {
     }   
 }
 
-export default withRouter(Signup);
+export default withRouter(SignUp);
 
 
