@@ -1,6 +1,6 @@
 .login {
     width: 500px;
-	height: 500px;
+	height: 380px;
     background-color: white;
     padding: 30px 80px;
     border-radius: 5px;
@@ -27,4 +27,14 @@ p {
 
 a {
     text-decoration: none;
+}
+
+.sign-up {
+    margin-right: 0px;
+    color: #f48fb1;
+    font-weight: 600;
+}
+
+.no-account {
+    margin-top: 3rem;
 }

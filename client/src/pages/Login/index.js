@@ -41,8 +41,8 @@ class Login extends Component {
                 this.setState({
                     redirectTo: '/favorite'
                 })
-
             }
+
         }).catch(error => {
         console.log('login error: ')
         console.log(error);
@@ -61,8 +61,8 @@ class Login extends Component {
                     <input type="text" id="username" name="username" placeholder="Username" value={this.state.username} onChange={this.handleChange}></input>
                     <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}></input>
                     <button type="submit" onClick={this.handleSubmit}>Submit</button>
-                    <p>Don't have an account? Sign up today to get access to your Favorites!</p>
-                    <button><a href="/signup">Sign Up</a></button>
+                    <p className="error"></p>
+                    <p className="no-account">Don't have an account? <a href="/signup" className="sign-up">Sign Up</a> today to get access to your Favorites!</p>
                 </form>
             </div>
     
