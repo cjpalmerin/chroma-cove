@@ -16,6 +16,8 @@ class SignUp extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
+
+    //get username and password from the page
     handleChange(event) {
 		this.setState({
 			[event.target.name]: event.target.value
