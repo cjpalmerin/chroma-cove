@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-      <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+      <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>
       <Wrapper>
       <Route exact path="/" component={Landing}/> 
       {/* <Route exact path="/signup" component={SignUp}/> */}

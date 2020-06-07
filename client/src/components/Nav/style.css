@@ -19,3 +19,12 @@ h1 {
     margin-right: 30px;
 }
 
+#welcome-message{
+    color: rgb(44, 178, 187);
+    text-align: end;
+    font-size: medium;
+    font-family: fantasy;
+    font-weight: bold;
+    display: inline-block;
+    padding-left: 25%;
+  }
