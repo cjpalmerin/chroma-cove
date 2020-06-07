@@ -1,6 +1,6 @@
 .signup {
     width: 500px;
-	height: 375px;
+	height: 415px;
     background-color: white;
     padding: 30px 80px;
     border-radius: 5px;
@@ -19,6 +19,12 @@ input {
     width: 25px;
     color: #777;
 
+}
+
+.yes-account {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 12px;
 }
 
 #signin-message {

@@ -38,10 +38,10 @@ class SignUp extends Component {
 					console.log('successful signup')
 					this.props.history.push('/login');
 				} else {
-                    $("#signin-message").text("username already taken!");
+                    $("#signin-message").text("Username already taken!");
                     $("#signin-message").css("color", "red");
                     $("#signin-message").fadeIn().delay(4000).fadeOut();
-					console.log('username already taken')
+					console.log('Username already taken')
 				}
 			}).catch(error => {
                 $("#signin-message").text("Enter required credentials");
@@ -64,8 +64,7 @@ class SignUp extends Component {
                     <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}></input>
                     <button type="submit" onClick={this.handleSubmit}>Submit</button>
                     <p id="signin-message"></p>
-                    <p>Already have an account? Login here:</p>
-                    <button><Link href="/login">Login</Link></button>
+                    <p className="yes-account">Already have an account? <a href="/login" className="sign-up">Log In </a>to view your favorites!</p>
                 </form>
             </div>
     

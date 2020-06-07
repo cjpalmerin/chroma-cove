@@ -43,7 +43,6 @@ class Login extends Component {
                 this.setState({
                     redirectTo: '/favorite'
                 })
-
             }
             else{
                 $("#signin-message").text("Enter valid login details");
@@ -72,8 +71,8 @@ class Login extends Component {
                     <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}></input>
                     <button type="submit" onClick={this.handleSubmit}>Submit</button>
                     <p id="signin-message"></p>
-                    <p>Don't have an account? Sign up today to get access to your Favorites!</p>
-                    <button><Link to="/signup">Sign Up</Link></button>
+                    <p className="no-account">Don't have an account? <a href="/signup" className="sign-up">Sign Up</a> today to get access to your Favorites!</p>
+                   
                 </form>
             </div>
     
