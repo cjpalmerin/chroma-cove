@@ -26,9 +26,6 @@ class Nav extends Component {
                     username: null
                 })
                 return <Redirect to="/" />
-                // this.setState({
-                //     redirectTo: '/logout'
-                // })
             }
         }).catch(error => {
             console.log('Logout error')
@@ -37,6 +34,7 @@ class Nav extends Component {
 
     render() {
         const loggedIn = this.props.loggedIn;
+        const username = this.props.username;
         if (this.state.redirectTo) {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
@@ -56,6 +54,7 @@ class Nav extends Component {
                             <span> | </span>
                             <Link to="/" className="nav-link" onClick={this.logout}>
                                 Logout</Link>
+                            <p id="welcome-message">Follow Your Favorite Photographers, {username}!</p>
                         </>
                     ) : (
                             <>
