@@ -64,3 +64,10 @@ ul {
       font-size: 12.5px;
       float: right;
   }
+
+  #favorite-message {
+    font-family: 'Roboto', sans-serif;
+    text-align: right;
+    font-size: large;
+    color: red;
+} 
