@@ -16,6 +16,7 @@ class Login extends Component {
         this.handleChange = this.handleChange.bind(this)
     }
 
+    //get user details from page
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
@@ -32,14 +33,10 @@ class Login extends Component {
         .then(response => {
             if (response.status === 200) {
                 console.log(response)
-                console.log("Logged in successfully");
-                // alert("Logged in successfully");
                 this.props.updateUser({
                     loggedIn: true,
                     username: response.data.username
                 })
-                console.log(this.props.updateUser);
-                // this.props.history.push('/favorite');
                 this.setState({
                     redirectTo: '/favorite'
                 })

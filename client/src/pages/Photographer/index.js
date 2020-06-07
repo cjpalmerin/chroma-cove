@@ -26,6 +26,7 @@ export default function Photographer(props) {
         })
     }, "")
 
+    // function to save the photographer details to database
     const getPhotographerInfo = () => {
         API.getPortfolio(username)
             .then(response => {
@@ -43,7 +44,6 @@ export default function Photographer(props) {
             }).then(res => {
                 console.log(res)
                 $("#favorite-message").text("Added to favorites!");
-                // $("#favorite-message").css("color", "green");
                 $("#favorite-message").fadeIn().delay(4000).fadeOut();
 
             }).catch(err => {
@@ -61,10 +61,6 @@ export default function Photographer(props) {
 
     const loggedIn = props.loggedIn;
     console.log(props)
-    // if(!loggedIn){
-    //     return <Redirect to='/login' />
-    // }
-    // else{
     return (
         <div className="container">
             <div className="uk-card uk-card-default uk-width-1-1@m">

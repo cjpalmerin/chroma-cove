@@ -2,6 +2,7 @@ import React from 'react';
 import "./style.css";
 import API from '../../utils/API';
 import { Redirect, Link } from 'react-router-dom';
+
 class Favorite extends React.Component {
     constructor(props) {
         super(props)
@@ -12,37 +13,38 @@ class Favorite extends React.Component {
         this.handleDelete = this.handleDelete.bind(this)
     }
 
-
+    //load the page with favorite photographers details, stored in the database
     componentDidMount() {
+        this.loadPhotographers();
+    }
+
+    //calling getFavePhotogs to get all favorite photographers details from database
+    loadPhotographers = () => {
         API.getFavePhotogs(this.props.username).then(data => {
             console.log(data.data[0].favorites)
             this.setState({ photographers: data.data[0].favorites })
         })
     }
 
+    // function to delete the particular photographer details
     handleDelete(id) {
         console.log(id);
-        // let phots = this.state.photographers;
-        // for (let i = 0; i < phots.length; i++) {
-        //     console.log(phots[i])
-        // if(phots[i]._id)
-        // }
         API.deletePhotog(id).then(data => {
-            // this.setState({photographers: data.data})
             console.log(data)
-            // window.location.reload;
+            this.loadPhotographers();
         })
-        // .then(
-        //     window.location.reload()
-        // )
 
     }
 
+    
+
     render() {
         const loggedIn = this.props.loggedIn;
+        // if user is not logged in redirect the page to login page
         if (!loggedIn) {
             return <Redirect to='/login' />
         }
+        // if user is logged in then show the favorite photographers details
         else {
             return (
                 <div className="container">
@@ -80,19 +82,6 @@ class Favorite extends React.Component {
                                                                     <img src={photographer.photos[3].urls.regular} alt="preview" className="photo-preview" />
                                                                 </li>
                                                             </ul>
-                                                            {/* <div className="col s6 m6">
-                                                                    <img src={photographer.photos[0].urls.small} alt="preview" />
-                                                                </div>
-                                                                <div className="col s6 m6">
-                                                                    <img src={photographer.photos[1].urls.small} alt="preview" />
-                                                                </div>
-                                                                <div className="col s6 m6">
-                                                                    <img src={photographer.photos[2].urls.full} alt="preview" />
-                                                                </div>
-                                                                <div className="col s6 m6">
-                                                                    <img src={photographer.photos[3].urls.full} alt="preview" />
-                                                                </div> */}
-
                                                         </div>
                                                     </div>
                                                 </div>
