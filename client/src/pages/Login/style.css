@@ -28,3 +28,9 @@ p {
 a {
     text-decoration: none;
 }
+
+#signin-message {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: red;
+}
