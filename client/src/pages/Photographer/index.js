@@ -47,7 +47,7 @@ export default function Photographer(props) {
                 //data conversion promise step
                 return {
                     username: response.data[0].user.name,
-                    bio: response.data[0].user.bio,
+                    // bio: response.data[0].user.bio,
                     profile_image: response.data[0].user.profile_image.large,
                     photos: response.data
                 }
