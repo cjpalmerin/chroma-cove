@@ -73,6 +73,9 @@ class Favorite extends React.Component {
                                                                 <div className="col s6 m6">
                                                                     <img src={photographer.photos[2].urls.full} alt="preview" />
                                                                 </div>
+                                                                <div className="col s6 m6">
+                                                                    <img src={photographer.photos[3].urls.full} alt="preview" />
+                                                                </div>
                                                         </div>
                                                     </div>
                                                 </div>

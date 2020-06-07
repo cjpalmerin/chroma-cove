@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 import axios from 'axios'
 import "./style.css";
 
@@ -56,7 +57,7 @@ class SignUp extends Component {
                     <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}></input>
                     <button type="submit" onClick={this.handleSubmit}>Submit</button>
                     <p>Already have an account? Login here:</p>
-                    <button><a href="/login">Login</a></button>
+                    <button><Link href="/login">Login</Link></button>
                 </form>
             </div>
     

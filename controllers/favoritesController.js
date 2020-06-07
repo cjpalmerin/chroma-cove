@@ -13,10 +13,10 @@ module.exports = {
 
     addFavePhotog: function(req, res) {
         if (req.user) {
-            let {bio, profile_image, username, photos} = req.body
+            let {profile_image, username, photos} = req.body
             console.log(req.user.username)  //find their id in the req.user object
             db.Favorites.create({
-                username, bio, profile_image,photos
+                username, profile_image, photos
 
             }).then(({_id}) => {
                 db.User.findOneAndUpdate({username: req.user.username}, {$push : {favorites: _id }}, {new: true})
