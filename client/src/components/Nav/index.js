@@ -54,7 +54,7 @@ class Nav extends Component {
                             <span> | </span>
                             <Link to="/" className="nav-link" onClick={this.logout}>
                                 Logout</Link>
-                            <p id="welcome-message">Follow Your Favorite Photographers, {username}!</p>
+                            <p id="welcome-message">Welcome back, @{username}!</p>
                         </>
                     ) : (
                             <>
