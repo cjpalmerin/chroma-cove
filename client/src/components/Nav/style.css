@@ -48,7 +48,7 @@ h1 {
 /* MEDIA QUERY */
 @media only screen and (max-width: 768px) {
 .navbar {
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .nav-link, nav-link:active .navspan {
@@ -56,13 +56,14 @@ h1 {
 }
 
 h1 {
-    font-size: 27px;
-    margin-right: 25px;
+    font-size: 20px;
+    margin-right: 10px;
     display:inline-block;
 }
 
 .nav-logo {
-    margin-right: 10px;
+    margin-right: 5px;
+    height: 45px;
 }
 
 span, a {
