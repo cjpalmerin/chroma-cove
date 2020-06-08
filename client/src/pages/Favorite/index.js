@@ -67,22 +67,12 @@ class Favorite extends React.Component {
                                                         <h3 className="uk-card-title uk-margin-remove-bottom name">{photographer.username} </h3>
                                                         <Link to={`/photographer/${photographer.photos[0].user.username}`} className="card-maintxt">View Portfolio</Link>
                                                         <div className="row photos">
-                                                            <ul>
-                                                                <li>
+                                
                                                                     <img src={photographer.photos[0].urls.regular} alt="preview" className="photo-preview" />
-                                                                </li>
 
-                                                                <li>
                                                                     <img src={photographer.photos[1].urls.regular} alt="preview" className="photo-preview" />
-                                                                </li>
 
-                                                                <li>
                                                                     <img src={photographer.photos[2].urls.regular} alt="preview" className="photo-preview" />
-                                                                </li>
-                                                                <li>
-                                                                    <img src={photographer.photos[3].urls.regular} alt="preview" className="photo-preview" />
-                                                                </li>
-                                                            </ul>
                                                         </div>
                                                     </div>
                                                 </div>
