@@ -32,7 +32,6 @@ class Login extends Component {
         })
         .then(response => {
             if (response.status === 200) {
-                console.log(response)
                 this.props.updateUser({
                     loggedIn: true,
                     username: response.data.username

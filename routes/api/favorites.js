@@ -18,7 +18,6 @@ router.get("/populate/:username", (req, res) => {
     db.User.find({ username: req.params.username }) // Find user ==== logged in user
         .populate("favorites")
         .then(data => {
-            console.log(data);
             res.json(data);
         })
         .catch(err => {
@@ -30,7 +29,7 @@ router.get("/populate/:username", (req, res) => {
         })
     }
 });
-
+//delete route
 router.route("/:id")
     .delete(favoritesController.deletePhotog);
 
