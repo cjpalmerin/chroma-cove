@@ -48,7 +48,7 @@ class Landing extends React.Component {
                     {this.state.photos.length ? (
                         <div>
                             {this.state.photos.map(photo => (
-                                <div className="col s6 m6">
+                                <div className="col s12 m6">
                                     <div className="card">
                                         <div className="card-image">
                                             {/* <img src={photo.urls.regular} alt="preview" /> */}

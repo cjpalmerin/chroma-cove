@@ -9,14 +9,29 @@
     padding-left: 30px;
     border-bottom: 2px solid rgb(220, 218, 218);
     box-shadow: 0 10px 20px -10px rgb(34, 34, 34);
-    background-color: white
+    background: linear-gradient(180deg, rgba(255,255,255,1) 75%, rgba(240,250,250,1) 100%);
+
 }
 
 h1 {
     font-size: 30px;
-    color: rgb(105, 180, 179);
     display: inline-block;
     margin-right: 30px;
+    font-family: 'Poiret One', cursive;
+    font-weight: 1000;
+
+}
+
+.h1span {
+    color: #89ddc7;
+    margin: 0px;
+}
+
+.h1span2 {
+    color: #73e1e1;
+
+    margin: 0px;
+
 }
 
 #welcome-message{
@@ -26,4 +41,37 @@ h1 {
     display: inline-block;
     font-weight: 500;
     margin-left: 40%;
+    margin-top: 0px;
+  }
+
+
+  /* MEDIA QUERY */
+  @media only screen and (max-width: 768px) {
+.navbar {
+    font-size: 12px;
+}
+
+.nav-link, nav-link:active .navspan {
+    margin-right: 3px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-right: 15px;
+    display:inline-block;
+}
+
+.nav-logo {
+    margin-right: 10px;
+}
+
+span, a {
+    margin-right: 2px;
+}
+
+#welcome-message {
+    text-align: right;
+    display: none;
+}
+
   }

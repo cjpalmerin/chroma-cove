@@ -41,17 +41,17 @@ class Nav extends Component {
             return (
                 <div className="navbar">
                     <img className="nav-logo" src={logo}></img>
-                    <h1>ChromaCove</h1>
+                    <h1><span className="h1span">Chroma</span><span className="h1span2">Cove</span></h1>
                     {loggedIn ? (
                         <>
                             <Link to="/" className={window.location.pathname === "/" ? "nav-link:active" : "nav-link"}>
                                 Search
                                 </Link>
-                            <span> | </span>
+                            <span className="navspan"> | </span>
                             <Link to="/favorite" className={window.location.pathname === "/favorite" ? "nav-link:active" : "nav-link"}>
-                                Favorite
+                                Favorites
                                 </Link>
-                            <span> | </span>
+                            <span className="navspan"> | </span>
                             <Link to="/" className="nav-link" onClick={this.logout}>
                                 Logout</Link>
                             <p id="welcome-message">Welcome back, @{username}!</p>
@@ -61,9 +61,9 @@ class Nav extends Component {
                                 <Link to="/" className={window.location.pathname === "/" ? "nav-link:active" : "nav-link"}>
                                     Search
                                 </Link>
-                                <span> | </span>
+                                <span className="navspan"> | </span>
                                 <Link to="/favorite" className={window.location.pathname === "/favorite" ? "nav-link:active" : "nav-link"}>
-                                    Favorite
+                                    Favorites
                                 </Link>
                             </>
                         )}
