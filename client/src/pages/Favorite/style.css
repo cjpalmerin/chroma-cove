@@ -56,7 +56,7 @@ ul {
     flex-grow: 1;
   }
   
- .photo-preview {
+ .fav-photo-preview {
     max-height: 350px;
     min-width: 100%;
     object-fit: cover;
@@ -103,7 +103,7 @@ ul {
         font-size: 22px;
         color:#777;
     }
-    .photo-preview {
+    .fav-photo-preview {
         object-fit: cover;
         max-width: 100% !important;
         max-height: 150px !important;
