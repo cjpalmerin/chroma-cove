@@ -9,3 +9,12 @@
 .no-photos {
     text-align: center;
 }
+
+
+.card-content {
+padding-top: 0px !important;
+}
+
+.photo-preview {
+    padding-bottom: 0px !important;
+}

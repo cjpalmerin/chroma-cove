@@ -16,7 +16,7 @@ a, span {
 
 a:hover {
   text-decoration: none;
-  color: #da5e77;
+  color: #f48fb1;
 }
 
 button {
@@ -36,6 +36,7 @@ button {
 
 button:hover {
   text-decoration: none;
-  background-color: #da5e77;
+  background-color: #f48fb1;
 }
+
 
