@@ -7,8 +7,7 @@ class Favorite extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            redirectTo: null,
-            photographers: []
+            redirectTo: null
         }
         this.handleDelete = this.handleDelete.bind(this)
     }
@@ -22,7 +21,11 @@ class Favorite extends React.Component {
     loadPhotographers = () => {
         API.getFavePhotogs(this.props.username).then(data => {
             console.log(data.data[0].favorites)
-            this.setState({ photographers: data.data[0].favorites })
+            // this.setState({ photographers: data.data[0].favorites })
+            this.props.updateUser({
+                photographers: data.data[0].favorites
+            })
+            console.log(this.props);
         })
     }
 
@@ -45,9 +48,9 @@ class Favorite extends React.Component {
             return(
                 <div className="container">
                     <div className="container">
-                    {this.state.photographers.length ? (
+                    {this.props.photographers.length ? (
                         <div>
-                            {this.state.photographers.map(photographer => (
+                            {this.props.photographers.map(photographer => (
                                 <div className="uk-card uk-card-default uk-width-1-1@m">
                                     <div className="uk-card-header">
                                         <button onClick={() => this.handleDelete(photographer._id)} id={photographer._id} className="remove-button"><i className="material-icons" width="40" height="40">✕</i></button>

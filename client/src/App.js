@@ -21,7 +21,8 @@ class App extends Component {
     this.state = {
       loggedIn: false,
       username: null,
-      user: null
+      user: null,
+      photographers: []
     }
 
     // this.getUser = this.getUser.bind(this)
@@ -54,10 +55,10 @@ class App extends Component {
             />}
         />
       <Route path="/photographer/:username" render={() =>
-        < Photographer updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        < Photographer updateUser={this.updateUser} loggedIn={this.state.loggedIn} photographers={this.state.photographers} />
       } />
       <Route path="/favorite" render={() =>
-        < Favorite updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username} />
+        < Favorite updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username} photographers={this.state.photographers} />
       } />
       </Wrapper>
       </div>
