@@ -39,11 +39,18 @@ class SignUp extends Component {
 				if (!response.data.errors && !response.data.error) {
 					console.log('successful signup')
 					this.props.history.push('/login');
-				} else {
-                    $("#signin-message").text("Username already taken!");
+                } else if(response.data.errors){
+                    $("#signin-message").text("Enter username and password!");
                     $("#signin-message").css("color", "red");
                     $("#signin-message").fadeIn().delay(4000).fadeOut();
-					console.log('Username already taken')
+					console.log('Enter username and password')
+                }
+                
+                else {
+                    $("#signin-message").text("Sorry, Username " +this.state.username + " already used by another user");
+                    $("#signin-message").css("color", "red");
+                    $("#signin-message").fadeIn().delay(4000).fadeOut();
+                    console.log('Sorry, Username' +this.state.username + 'already taken');
 				}
 			}).catch(error => {
                 $("#signin-message").text("Enter required credentials");

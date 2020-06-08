@@ -23,9 +23,7 @@ h1 {
     color: rgb(44, 178, 187);
     text-align: end;
     font-size: 15px;
-    display: inline;
-    float: right;
-    padding-top: 2rem;
-    margin-right: 4rem;
+    display: inline-block;
     font-weight: 500;
+    margin-left: 40%;
   }
