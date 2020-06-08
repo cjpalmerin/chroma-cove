@@ -8,14 +8,8 @@ import Favorite from './pages/Favorite';
 import Photographer from './pages/Photographer';
 import LogIn from './pages/Login';
 import SignUp from './pages/Signup';
-import Search from './components/KeywordSearch';
-
-import API from './utils/API'
 
 class App extends Component {
-  // API.getUnsplashPhotos().then((data) => {
-  //   console.log(data.data);
-  // })
   constructor() {
     super()
     this.state = {
@@ -25,17 +19,12 @@ class App extends Component {
       photographers: []
     }
 
-    // this.getUser = this.getUser.bind(this)
-    // this.componentDidMount = this.componentDidMount.bind(this)
     this.updateUser = this.updateUser.bind(this)
   }
 
   updateUser(userObject) {
-    console.log(userObject);
     this.setState(userObject)
   }
-
-
 
   render() {
     return (
@@ -44,9 +33,7 @@ class App extends Component {
       <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>
       <Wrapper>
       <Route exact path="/" component={Landing}/> 
-      {/* <Route exact path="/signup" component={SignUp}/> */}
       <Route path="/signup" component={SignUp}/>
-      {/* <Route exact path="/login" updateUser={this.updateUser} component={LogIn}/> */}
       <Route
           path="/login"
           render={() =>

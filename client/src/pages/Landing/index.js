@@ -12,11 +12,8 @@ class Landing extends React.Component {
     }
 
     componentDidMount() {
-        // console.log("component mounted")
         API.getUnsplashPhotos().then(data => {
-            // console.log(data)
             this.setState({ photos: data.data })
-            // console.log(this.state.photos[0].urls.regular)
         })
     }
 
@@ -30,12 +27,12 @@ class Landing extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         API.keywordSearch(this.state.keyword).then(data => {
-            console.log(data);
             this.setState({
                 photos: data.data.results
             })
         })
     }
+    
     render() {
         return (
             <div className="container">
@@ -48,10 +45,9 @@ class Landing extends React.Component {
                     {this.state.photos.length ? (
                         <div>
                             {this.state.photos.map(photo => (
-                                <div className="col s12 m6">
+                                <div key={photo.id} className="col s12 m6">
                                     <div className="card">
                                         <div className="card-image">
-                                            {/* <img src={photo.urls.regular} alt="preview" /> */}
                                             <ul>
                                                 <li>
                                                     <img src={photo.urls.regular} alt="preview" className="photo-preview" />
@@ -61,7 +57,7 @@ class Landing extends React.Component {
                                         <div className="card-content">
                                             <Link to={`/photographer/${photo.user.username}`} className="card-maintxt">{photo.user.name}</Link>
                                             <p className="card-maintxt">@{photo.user.instagram_username}</p>
-                                            <p className="card-link">from <a href={photo.links.html} target="_blank">Unsplash</a></p>
+                                            <p className="card-link">from <a href={photo.links.html} target="_blank" rel="noopener noreferrer">Unsplash</a></p>
                                         </div>
                                     </div>
                                 </div>

@@ -20,20 +20,15 @@ class Favorite extends React.Component {
     //calling getFavePhotogs to get all favorite photographers details from database
     loadPhotographers = () => {
         API.getFavePhotogs(this.props.username).then(data => {
-            console.log(data.data[0].favorites)
-            // this.setState({ photographers: data.data[0].favorites })
             this.props.updateUser({
                 photographers: data.data[0].favorites
             })
-            console.log(this.props);
         })
     }
 
     // function to delete the particular photographer details
     handleDelete(id) {
-        console.log(id);
         API.deletePhotog(id).then(data => {
-            console.log(data)
             this.loadPhotographers();
         })
 

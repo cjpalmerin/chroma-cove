@@ -17,9 +17,7 @@ class Nav extends Component {
 
     logout(event) {
         event.preventDefault()
-        console.log('logging out')
         axios.post('/user/logout').then(response => {
-            console.log(response.data)
             if (response.status === 200) {
                 this.props.updateUser({
                     loggedIn: false,
@@ -40,7 +38,7 @@ class Nav extends Component {
         } else {
             return (
                 <div className="navbar">
-                    <img className="nav-logo" src={logo}></img>
+                    <img className="nav-logo" src={logo} alt="ChromaCove" ></img>
                     <h1><span className="h1span">Chroma</span><span className="h1span2">Cove</span></h1>
                     {loggedIn ? (
                         <>

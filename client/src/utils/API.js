@@ -19,7 +19,6 @@ export default {
     },
     //GET USER'S FAVORITE PHOTOGRAPHERS ======CHROMACOVE======
     getFavePhotogs: function (username) {
-        console.log(username);
         return axios.get("api/favorites/populate/" + username)
     },
     //POST USER'S FAVORITE PHOTOGRAPHER ======CHROMACOVE======
@@ -27,8 +26,6 @@ export default {
         return axios.post("/api/favorites/", userData)
     },
     deletePhotog: function(id) {
-        console.log(id);
-        
         return axios.delete("/api/favorites/" + id)
     }
 

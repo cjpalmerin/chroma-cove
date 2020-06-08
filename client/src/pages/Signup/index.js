@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router';
-import { Link } from 'react-router-dom';
 import axios from 'axios'
 import "./style.css";
 import $ from "jquery";
@@ -25,32 +24,25 @@ class SignUp extends Component {
     }
     
     handleSubmit(event) {
-		console.log('sign-up handleSubmit, username: ')
-		console.log(this.state.username)
         event.preventDefault()
         $("#signin-message").hide()
-		//request to server to add a new username/password
 		axios.post('/user/', {
 			username: this.state.username,
 			password: this.state.password
 		})
 			.then(response => {
-				console.log(response)
 				if (!response.data.errors && !response.data.error) {
-					console.log('successful signup')
 					this.props.history.push('/login');
                 } else if(response.data.errors){
                     $("#signin-message").text("Enter username and password!");
                     $("#signin-message").css("color", "red");
                     $("#signin-message").fadeIn().delay(4000).fadeOut();
-					console.log('Enter username and password')
                 }
                 
                 else {
                     $("#signin-message").text("Sorry, Username " +this.state.username + " already used by another user");
                     $("#signin-message").css("color", "red");
                     $("#signin-message").fadeIn().delay(4000).fadeOut();
-                    console.log('Sorry, Username' +this.state.username + 'already taken');
 				}
 			}).catch(error => {
                 $("#signin-message").text("Enter required credentials");
