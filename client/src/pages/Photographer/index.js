@@ -109,12 +109,12 @@ export default function Photographer(props) {
                     ) }
                     <div className="uk-grid-large uk-flex-middle" uk-grid>
                         <div className="row photographer-info">
-                            <div className="col s2">
+                            <div className="col s12 m2">
                                 <div className="uk-width-auto">
-                                    <img className="uk-border-circle" width="100" height="100" src={avatar} alt="preview" />
+                                    <img className="uk-border-circle profilepic" width="90" height="90" src={avatar} alt="preview" />
                                 </div>
                             </div>
-                            <div className="col s8">
+                            <div className="col s12 m8">
                                 <div className="uk-width-expand photographer-title">
                                     <h3 className="uk-card-title uk-margin-remove-bottom name">{name}</h3>
                                     <p className="uk-text-meta uk-margin-remove-top">@{username}</p>
