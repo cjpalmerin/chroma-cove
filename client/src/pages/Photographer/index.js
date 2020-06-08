@@ -56,7 +56,37 @@ export default function Photographer(props) {
 
     const handleSave = (event) => {
         event.preventDefault()
-        getPhotographerInfo();
+        console.log(name);
+        
+        const photographers = props.photographers;
+        console.log(photographers);
+        
+        if(photographers.length !== 0){
+            console.log(photographers[0].username);
+            const photographersArray = []
+            for( var i=0; i < photographers.length; i++){
+                photographersArray.push(photographers[i].username)
+            }
+            console.log(photographersArray);
+            
+            var added = photographersArray.includes(name);
+            console.log(added);
+            if(!added){
+                console.log("number two");
+                getPhotographerInfo();
+            }
+            else{
+                $("#favorite-message").text("Already added!");
+                $("#favorite-message").fadeIn().delay(4000).fadeOut();
+            }
+            
+        }
+        else{
+            console.log("number three");
+            
+            getPhotographerInfo();
+        }
+
     }
 
     const loggedIn = props.loggedIn;
