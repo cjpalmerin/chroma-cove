@@ -48,6 +48,7 @@ class Favorite extends React.Component {
             return(
                 <div className="container">
                     <div className="container">
+                    <h3 id="welcome">Welcome back, <span className="username">@{this.props.username}</span>!</h3>
                     {this.props.photographers.length ? (
                         <div>
                             {this.props.photographers.map(photographer => (
@@ -56,12 +57,12 @@ class Favorite extends React.Component {
                                         <button onClick={() => this.handleDelete(photographer._id)} id={photographer._id} className="remove-button"><i className="material-icons" width="40" height="40">✕</i></button>
                                         <div className="uk-grid-large uk-flex-middle" uk-grid="true">
                                             <div className="row photographer-info">
-                                                <div className="col s2">
+                                                <div className="col s12 m2">
                                                     <div className="uk-width-auto">
-                                                        <img className="uk-border-circle" width="90" height="90" src={photographer.profile_image} alt="preview" />
+                                                        <img className="uk-border-circle profilepic" src={photographer.profile_image} alt="preview" />
                                                     </div>
                                                 </div>
-                                                <div className="col s8">
+                                                <div className="col s12 m8">
                                                     <div className="uk-width-expand photographer-title">
                                                         <h3 className="uk-card-title uk-margin-remove-bottom name">{photographer.username} </h3>
                                                         <Link to={`/photographer/${photographer.photos[0].user.username}`} className="card-maintxt">View Portfolio</Link>

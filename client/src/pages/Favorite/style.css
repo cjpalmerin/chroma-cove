@@ -23,6 +23,11 @@ i {
     text-align: left;
 }
 
+.uk-border-circle {
+    width: 90;
+    height: 90;
+}
+
 .remove-button {
     display: inline;
     float: right;
@@ -59,3 +64,43 @@ ul {
     margin: 3px;
   }
 
+  #welcome {
+      display: none;
+  }
+
+  .username {
+      color: rgb(44, 178, 187);
+      padding: 0px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .name {
+       font-size: 20px;
+       text-align: center;
+    }
+
+    .card-maintxt {
+        font-size: 16px;
+    }
+
+    .photographer-title {
+        text-align: center;
+    }
+
+    .profilepic {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    #welcome {
+        display: block;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        font-size: 22px;
+        color:#777;
+    }
+  }

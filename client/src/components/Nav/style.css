@@ -45,10 +45,10 @@ h1 {
   }
 
 
-  /* MEDIA QUERY */
-  @media only screen and (max-width: 768px) {
+/* MEDIA QUERY */
+@media only screen and (max-width: 768px) {
 .navbar {
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .nav-link, nav-link:active .navspan {
@@ -56,8 +56,8 @@ h1 {
 }
 
 h1 {
-    font-size: 20px;
-    margin-right: 15px;
+    font-size: 27px;
+    margin-right: 25px;
     display:inline-block;
 }
 
@@ -74,4 +74,10 @@ span, a {
     display: none;
 }
 
-  }
+}
+
+@media only screen and (max-width: 1200px) {
+    #welcome-message {
+        display: none;
+    }
+}
