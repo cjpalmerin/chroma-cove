@@ -65,7 +65,7 @@ class SignUp extends Component {
                     <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}></input>
                     <button type="submit" onClick={this.handleSubmit}>Submit</button>
                     <p id="signin-message"></p>
-                    <p className="yes-account">Already have an account? <a href="/login" className="sign-up">Log In </a>to view your favorites!</p>
+                    <p className="yes-account">Already have an account? <Link to="/login" className="sign-up">Log In </Link>to view your favorites!</p>
                 </form>
             </div>
     
